@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./CSS/index.css" />
+    <title>Ball game</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Type-A-Thon</h1>
+        <aside>
+          Score:
+          <span id="show_count">0</span>
+        </aside>
+      </header>
+      <main>
+        <div class="board">
+          <div id="ball-1" class="ball hide" onkeydown="onkeydown(0)"></div>
+          <div id="ball-2" class="ball hide" onkeydown="onkeydown(1)"></div>
+          <div id="ball-3" class="ball hide" onkeydown="onkeydown(2)"></div>
+          <div id="game-over" class="hide">
+            <!-- <aside> -->
+            <!-- Score: -->
+            <!-- <span class="show_count">0</span> -->
+            <!-- </aside> -->
+            <div id="face">
+              <div class="eye">
+                <div class="dot"></div>
+              </div>
+              <div class="eye">
+                <div class="dot"></div>
+              </div>
+              <div class="mouth"></div>
+            </div>
+            <p id="gOver">Game Over</p>
+          </div>
+        </div>
+        <button class="btn" id="start" type="button" onclick="startGame()">
+          START
+        </button>
+      </main>
+
+      <footer><p>&copy;ManaliPatel,Dec 2022</p></footer>
+    </div>
+    <script src="./JS/index.js" async defer></script>
+  </body>
+</html>
