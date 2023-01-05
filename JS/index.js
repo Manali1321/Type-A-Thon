@@ -3,7 +3,7 @@ var balls = document.querySelectorAll('.ball');
 var board = document.getElementsByClassName('board');
 var startbtn = document.getElementById('start');
 var gameOverDiv = document.getElementById('game-over');
-var scoreDisplay = document.getElementById('show_count');
+var scoreDisplay = document.getElementsByClassName('show_count');
 
 var ballCount = 0;
 var gameOver = false;
@@ -34,7 +34,7 @@ function startGame() {
     document.getElementById('ball-3').innerHTML = ball3;
     ballsArray = Array.from(balls).map(ball => ball.textContent);
     ballCount = 0;
-    scoreDisplay.innerText = `${ballCount}`;
+
 
     balls.forEach(ball => {
         ball.classList.add('ball-move');
@@ -60,7 +60,6 @@ function reset(num) {
 
     balls[num].style.left = Math.floor(Math.random() * 90 + 1) + '%';
 
-
     ballCount += 1;
     var counter = `${ballCount}`
     scoreDisplay.innerText = counter;
@@ -69,6 +68,9 @@ function reset(num) {
             ball.classList.remove('.ball-move');
             ball.classList.add('overFive');
         })
+    }
+    for (var i = 0; i < scoreDisplay.length; i++) {
+        scoreDisplay[i].innerText = `${ballCount}`;
     }
 
 }
