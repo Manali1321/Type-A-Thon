@@ -40,11 +40,10 @@ header {
   text-align: center;
 }
 .btn {
-  width: 100px;
-  height: 30px;
   background-color: chocolate;
   border: black 2px solid;
   margin-bottom: 20px;
+  padding: 10px;
 }
 .ball {
   padding: 10px;
