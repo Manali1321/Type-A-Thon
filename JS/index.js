@@ -12,6 +12,7 @@ balls.forEach(ball => {
 });
 
 function gameOverEvent() {
+
     balls.forEach(ball => {
         ball.style.animationPlayState = 'paused';
         ball.classList.add('hide');
@@ -21,7 +22,6 @@ function gameOverEvent() {
     gameOverDiv.classList.add('game-over');
     startbtn.classList.remove('hide');
 }
-
 var ballsArray = [];
 
 function startGame() {
@@ -35,6 +35,7 @@ function startGame() {
     ballsArray = Array.from(balls).map(ball => ball.textContent);
     ballCount = 0;
 
+
     balls.forEach(ball => {
         ball.classList.add('ball-move');
         ball.classList.remove('hide');
@@ -47,7 +48,9 @@ function startGame() {
     startbtn.classList.add('hide');
 }
 
+
 function reset(num) {
+
     var newElement = alphabet[Math.floor(Math.random() * alphabet.length)]
     ballsArray.splice(num, 1, newElement);
     balls[num].innerHTML = newElement;
@@ -69,36 +72,29 @@ function reset(num) {
     for (var i = 0; i < scoreDisplay.length; i++) {
         scoreDisplay[i].innerText = `${ballCount}`;
     }
+
 }
 
 function disappear(num) {
+
     balls[num].classList.add('hide');
     balls[num].classList.remove('ball-move');
 }
-
-function startButtonHandler() {
-    startGame();
-}
-
-function documentKeydownHandler(event) {
-    if (event.keyCode === 13 && !gameOver) {
-        startGame();
-    }
-}
-
-startbtn.addEventListener('click', startButtonHandler);
-document.addEventListener('keydown', documentKeydownHandler);
 
 document.addEventListener('keydown', function (event) {
     var key = event.key;
     const uppercaseKey = key.toUpperCase();
 
-    var getIndex = ballsArray.indexOf(uppercaseKey);
+    if (key === "Enter") {
+        startGame();
+    } else {
+        var getIndex = ballsArray.indexOf(uppercaseKey);
 
-    if (getIndex !== -1) {
-        disappear(getIndex);
-        setTimeout(() => {
-            reset(getIndex)
-        }, 10)
+        if (getIndex !== -1) {
+            disappear(getIndex);
+            setTimeout(() => {
+                reset(getIndex)
+            }, 10)
+        }
     }
-})
+});
