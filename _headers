@@ -3,3 +3,4 @@
   X-Frame-Options: SAMEORIGIN
   X-Content-Type-Options: nosniff
   Content-Security-Policy: script-src 'self'
+  Permissions-Policy: geolocation=(self "https://example.com"), microphone=()
