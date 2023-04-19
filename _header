@@ -1,6 +1,5 @@
 /*
   X-Frame-Options: DENY
-  X-XSS-Protection: 1; mode=block
+  X-Frame-Options: SAMEORIGIN
   X-Content-Type-Options: nosniff
-  Content-Security-Policy: default-src scotthelme.co.uk
-  Feature-Policy: geolocation 'self' https://example.com; microphone 'none'
+  Content-Security-Policy: script-src 'self'
